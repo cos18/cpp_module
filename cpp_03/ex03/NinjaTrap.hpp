@@ -8,6 +8,7 @@
 class NinjaTrap: virtual public ClapTrap {
 
 public:
+	NinjaTrap(void);
 	NinjaTrap(std::string name);
 	NinjaTrap(const NinjaTrap &src);
 	virtual ~NinjaTrap(void);

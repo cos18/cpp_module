@@ -1,18 +1,24 @@
 #include "ClapTrap.hpp"
 
+ClapTrap::ClapTrap(void): _hp(100), _maxHP(100), _ep(100), _maxEP(100), _level(1),
+						_name(""), _meleeDamage(30), _rangedDamage(20), _armorReduction(5)
+{
+	std::cout << "Unnamed ClapTrap Created!\n";
+}
+
 ClapTrap::ClapTrap(std::string name): _hp(100), _maxHP(100), _ep(100), _maxEP(100),
 									_level(1), _name(name), _meleeDamage(30), _rangedDamage(20), _armorReduction(5)
 {
-	std::cout << "ClapTrap Created!\n";
+	std::cout << "ClapTrap " << this->_name << " Created!\n";
 }
 
 ClapTrap::ClapTrap(const ClapTrap &src) {
 	*this = src;
-	std::cout << "ClapTrap Created!\n";
+	std::cout << "ClapTrap " << this->_name << " Created!\n";
 }
 
 ClapTrap::~ClapTrap(void) {
-	std::cout << "ClapTrap Destroyed!\n";
+	std::cout << "ClapTrap " << this->_name << " Destroyed!\n";
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &rhs) {

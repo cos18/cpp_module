@@ -20,6 +20,7 @@ private:
 	int _armorReduction;
 
 public:
+	ScavTrap(void);
 	ScavTrap(std::string name);
 	ScavTrap(const ScavTrap &src);
 	~ScavTrap(void);

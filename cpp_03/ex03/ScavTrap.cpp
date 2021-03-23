@@ -1,5 +1,15 @@
 #include "ScavTrap.hpp"
 
+ScavTrap::ScavTrap(void) {
+	this->_ep = 50;
+	this->_maxEP = 50;
+	this->_meleeDamage = 20;
+	this->_rangedDamage = 15;
+	this->_armorReduction = 3;
+	this->_type = "SC4V-TP";
+	std::cout << "Unnamed SC4V-TP: Yoo hoooooooooo!\n";
+}
+
 ScavTrap::ScavTrap(std::string name): ClapTrap(name)
 {
 	this->_ep = 50;

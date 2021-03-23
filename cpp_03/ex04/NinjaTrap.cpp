@@ -1,7 +1,15 @@
 #include "NinjaTrap.hpp"
 
-NinjaTrap::NinjaTrap(void)
-{
+NinjaTrap::NinjaTrap(void) {
+	this->_hp = 60;
+	this->_maxHP = 60;
+	this->_ep = 120;
+	this->_maxEP = 120;
+	this->_meleeDamage = 60;
+	this->_rangedDamage = 5;
+	this->_armorReduction = 0;
+	this->_type = "NINJ4-TP";
+	std::cout << "Unnamed NINJ4-TP: Hiyaaaa!\n";
 }
 
 NinjaTrap::NinjaTrap(std::string name): ClapTrap(name)

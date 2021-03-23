@@ -1,9 +1,15 @@
 #include "FragTrap.hpp"
 
+FragTrap::FragTrap(void): _hp(100), _maxHP(100), _ep(100), _maxEP(100), _level(1),
+						_name(""), _meleeDamage(30), _rangedDamage(20), _armorReduction(5)
+{
+	std::cout << "Unnamed FR4G-TP: Let's get this party started!\n";
+}
+
 FragTrap::FragTrap(std::string name): _hp(100), _maxHP(100), _ep(100), _maxEP(100),
 									_level(1), _name(name), _meleeDamage(30), _rangedDamage(20), _armorReduction(5)
 {
-	std::cout << "FR4G-TP " << this->_name << ": Let's get this party started\n";
+	std::cout << "FR4G-TP " << this->_name << ": Let's get this party started!\n";
 }
 
 FragTrap::FragTrap(const FragTrap &src) {

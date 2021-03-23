@@ -1,7 +1,11 @@
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(std::string name): ClapTrap(name)
-{
+FragTrap::FragTrap(void) {
+	this->_type = "FR4G-TP";
+	std::cout << "Unnamed FR4G-TP: Let's get this party started!\n";
+}
+
+FragTrap::FragTrap(std::string name): ClapTrap(name) {
 	this->_type = "FR4G-TP";
 	std::cout << "FR4G-TP " << this->_name << ": Let's get this party started\n";
 }

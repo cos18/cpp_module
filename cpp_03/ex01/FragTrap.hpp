@@ -20,6 +20,7 @@ private:
 	int _armorReduction;
 
 public:
+	FragTrap(void);
 	FragTrap(std::string name);
 	FragTrap(const FragTrap &src);
 	~FragTrap(void);

@@ -1,5 +1,17 @@
 #include "SuperTrap.hpp"
 
+SuperTrap::SuperTrap(void) {
+	this->_hp = this->FragTrap::_hp;
+	this->_maxHP = this->FragTrap::_maxHP;
+	this->_ep = this->NinjaTrap::_ep;
+	this->_maxEP = this->NinjaTrap::_maxEP;
+	this->_meleeDamage = this->NinjaTrap::_meleeDamage;
+	this->_rangedDamage = this->FragTrap::_rangedDamage;
+	this->_armorReduction = this->FragTrap::_armorReduction;
+	this->_type = "SUPER-TP";
+	std::cout << "Unnamed SUPER-TP: Fiyaaaa!\n";
+}
+
 SuperTrap::SuperTrap(std::string name): ClapTrap(name), NinjaTrap(name), FragTrap(name) {
 	this->_hp = this->FragTrap::_hp;
 	this->_maxHP = this->FragTrap::_maxHP;

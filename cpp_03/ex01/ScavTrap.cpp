@@ -1,5 +1,11 @@
 #include "ScavTrap.hpp"
 
+ScavTrap::ScavTrap(void): _hp(100), _maxHP(100), _ep(50), _maxEP(50), _level(1),
+						_name(""), _meleeDamage(20), _rangedDamage(15), _armorReduction(3)
+{
+	std::cout << "Unnamed SC4V-TP: Yoo hoooooooooo!\n";
+}
+
 ScavTrap::ScavTrap(std::string name): _hp(100), _maxHP(100), _ep(50), _maxEP(50),
 									_level(1), _name(name), _meleeDamage(20), _rangedDamage(15), _armorReduction(3)
 {
