@@ -6,7 +6,7 @@
 # include <cstdlib>
 # include <ctime>
 
-class FragTrap:  {
+class FragTrap {
 
 private:
 	int _hp;
