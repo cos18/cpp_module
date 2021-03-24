@@ -13,10 +13,14 @@ AWeapon::~AWeapon(void){
 }
 
 AWeapon &AWeapon::operator=(const AWeapon &rhs) {
+	this->copyMember(rhs);
+	return *this;
+}
+
+void AWeapon::copyMember(const AWeapon &rhs) {
 	this->_name = rhs._name;
 	this->_apcost = rhs._apcost;
 	this->_damage = rhs._damage;
-	return *this;
 }
 
 const std::string AWeapon::getName(void) const {

@@ -6,7 +6,7 @@
 
 class AWeapon {
 
-protected:
+private:
 	std::string _name;
 	int _apcost;
 	int _damage;
@@ -17,6 +17,7 @@ public:
 	virtual ~AWeapon(void);
 	AWeapon &operator=(const AWeapon &rhs);
 
+	void copyMember(const AWeapon &rhs);
 	const std::string getName(void) const;
 	int getAPCost(void) const;
 	int getDamage(void) const;
