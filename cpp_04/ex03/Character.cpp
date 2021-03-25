@@ -24,20 +24,18 @@ Character::~Character(void) {
 	for (int i = 0; i < 4; i++) {
 		if (this->_materias[i] != NULL)
 			delete this->_materias[i];
+	}
 	delete[] this->_materias;
 }
 
-Character &Character::operator=(const Character &) {
-	
-}
-
-Character &operator=(const Character &rhs) {
+Character &Character::operator=(const Character &rhs) {
 	this->_name = rhs._name;
 	for (int i = 0; i < 4; i++) {
 		if (this->_materias[i] != NULL)
 			delete this->_materias[i];
 		this->_materias[i] = rhs._materias[i];
 	}
+	return *this;
 }
 
 const std::string &Character::getName(void) const {
@@ -45,13 +43,28 @@ const std::string &Character::getName(void) const {
 }
 
 void Character::equip(AMateria *m) {
-
+	if (m == NULL)
+		return;
+	for (int i = 0; i < 4; i++) {
+		if (this->_materias[i] && this->_materias[i] == m)
+			return;
+	}
+	for (int i = 0; i < 4; i++) {
+		if (this->_materias[i] == NULL) {
+			this->_materias[i] = m;
+			return;
+		}
+	}
 }
 
 void Character::unequip(int idx) {
-
+	if (idx < 0 || idx >= 4 || this->_materias[idx] == NULL)
+		return;
+	this->_materias[idx] = NULL;
 }
 
 void Character::use(int idx, ICharacter &target) {
-
+	if (idx < 0 || idx >= 4 || this->_materias[idx] == NULL)
+		return;
+	this->_materias[idx]->use(target);
 }

@@ -1,6 +1,9 @@
 #ifndef A_MATERIA_HPP
 # define A_MATERIA_HPP
 
+# include <string>
+# include <iostream>
+class AMateria;
 # include "ICharacter.hpp"
 
 class AMateria {
@@ -17,8 +20,8 @@ public:
 	AMateria &operator=(const AMateria &rhs);
 
 	void copyMember(const AMateria &rhs);
-	const std::string &getType(void) const; //Returns the materia type
-	unsigned int getXP(void) const; //Returns the Materia's XP
+	const std::string &getType(void) const;
+	unsigned int getXP(void) const;
 	virtual AMateria* clone(void) const = 0;
 	virtual void use(ICharacter &target);
 };
