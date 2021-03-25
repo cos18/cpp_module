@@ -1,25 +1,26 @@
 #include "SuperTrap.hpp"
 
 SuperTrap::SuperTrap(void) {
-	this->_hp = this->FragTrap::_hp;
-	this->_maxHP = this->FragTrap::_maxHP;
-	this->_ep = this->NinjaTrap::_ep;
-	this->_maxEP = this->NinjaTrap::_maxEP;
-	this->_meleeDamage = this->NinjaTrap::_meleeDamage;
-	this->_rangedDamage = this->FragTrap::_rangedDamage;
-	this->_armorReduction = this->FragTrap::_armorReduction;
+	this->_hp = 100;
+	this->_maxHP = 100;
+	this->_ep = 120;
+	this->_maxEP = 120;
+	this->_meleeDamage = 60;
+	this->_rangedDamage = 20;
+	this->_armorReduction = 5;
 	this->_type = "SUPER-TP";
 	std::cout << "Unnamed SUPER-TP: Fiyaaaa!\n";
 }
 
-SuperTrap::SuperTrap(std::string name): ClapTrap(name), NinjaTrap(name), FragTrap(name) {
-	this->_hp = this->FragTrap::_hp;
-	this->_maxHP = this->FragTrap::_maxHP;
-	this->_ep = this->NinjaTrap::_ep;
-	this->_maxEP = this->NinjaTrap::_maxEP;
-	this->_meleeDamage = this->NinjaTrap::_meleeDamage;
-	this->_rangedDamage = this->FragTrap::_rangedDamage;
-	this->_armorReduction = this->FragTrap::_armorReduction;
+SuperTrap::SuperTrap(std::string name) {
+	this->_name = name;
+	this->_hp = 100;
+	this->_maxHP = 100;
+	this->_ep = 120;
+	this->_maxEP = 120;
+	this->_meleeDamage = 60;
+	this->_rangedDamage = 20;
+	this->_armorReduction = 5;
 	this->_type = "SUPER-TP";
 	std::cout << "SUPER-TP " << this->_name << ": Fiyaaaa!\n";
 }
