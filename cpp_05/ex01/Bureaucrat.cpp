@@ -11,6 +11,10 @@ Bureaucrat::Bureaucrat(std::string name, int grade): _name(name), _grade(grade) 
 		throw Bureaucrat::GradeTooLowException();
 }
 
+Bureaucrat::Bureaucrat(const Bureaucrat &src): _name(src._name), _grade(src._grade) {
+	return;
+}
+
 Bureaucrat::~Bureaucrat(void) {
 	return;
 }
@@ -48,7 +52,20 @@ void Bureaucrat::decreaseGrade(void) {
 	this->_grade += 1;
 }
 
+void Bureaucrat::signForm(Form &f) {
+	try {
+		f.beSigned(*this);
+		std::cout << *this << " signs " << f << "\n";
+	} catch (Form::AlreadySignedException &e) {
+		std::cout << *this << " cannot sign " << f
+			<< " because the form is already signed.\n";
+	} catch (Form::GradeTooLowException &e){
+		std::cout << *this << " cannot sign " << f
+				<< " because it's grade is too low.\n";
+	}
+}
+
 std::ostream &operator<<(std::ostream &o, const Bureaucrat &rhs) {
-	o << rhs.getName() << ", bureaucrat grade " << rhs.getGrade() << "\n";
+	o << rhs.getName() << ", bureaucrat grade " << rhs.getGrade();
 	return o;
 }

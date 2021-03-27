@@ -52,6 +52,35 @@ void Bureaucrat::decreaseGrade(void) {
 	this->_grade += 1;
 }
 
+void Bureaucrat::signForm(Form &f) {
+	try {
+		f.beSigned(*this);
+		std::cout << *this << " signs " << f << "\n";
+	} catch (Form::AlreadySignedException &e) {
+		std::cout << *this << " cannot sign " << f
+			<< " because the form is already signed.\n";
+	} catch (Form::GradeTooLowException &e){
+		std::cout << *this << " cannot sign " << f
+				<< " because it's grade is too low.\n";
+	}
+}
+
+void Bureaucrat::executeForm(Form &f) {
+	try {
+		f.execute(*this);
+		std::cout << *this << " executes " << f << "\n";
+	} catch (Form::UnsignedException &e) {
+		std::cout << *this << " cannot execute " << f
+			<< " because the form isn't signed.\n";
+	} catch (Form::GradeTooLowException &e){
+		std::cout << *this << " cannot execute " << f
+				<< " because it's grade is too low.\n";
+	} catch (std::exception &e) {
+		std::cout << *this << " cannot execute " << f
+				<< " because " << e.what() << "\n";
+	}
+}
+
 std::ostream &operator<<(std::ostream &o, const Bureaucrat &rhs) {
 	o << rhs.getName() << ", bureaucrat grade " << rhs.getGrade();
 	return o;

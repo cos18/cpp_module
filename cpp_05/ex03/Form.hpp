@@ -30,11 +30,15 @@ public:
 	class AlreadySignedException: public std::exception {
 		virtual const char *what() const throw();
 	};
-	void beSigned(const Bureaucrat &b);
+	class UnsignedException: public std::exception {
+		virtual const char *what() const throw();
+	};
 	const std::string getName(void) const;
 	bool getSigned(void) const;
 	int getSignGrade(void) const;
 	int getExecuteGrade(void) const;
+	void beSigned(const Bureaucrat &b);
+	virtual void execute(const Bureaucrat &b) const;
 
 };
 

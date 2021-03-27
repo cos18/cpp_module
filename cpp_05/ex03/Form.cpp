@@ -38,12 +38,8 @@ const char *Form::AlreadySignedException::what() const throw() {
 	return "AlreadySignedException: Form is already signed!";
 }
 
-void Form::beSigned(const Bureaucrat &b) {
-	if (b.getGrade() > this->_signGrade)
-		throw Form::GradeTooLowException();
-	if (this->_signed)
-		throw Form::AlreadySignedException();
-	this->_signed = true;
+const char *Form::UnsignedException::what() const throw() {
+	return "UnsignedException: Form is not ready to execute!";
 }
 
 const std::string Form::getName(void) const {
@@ -60,6 +56,21 @@ int Form::getSignGrade(void) const {
 
 int Form::getExecuteGrade(void) const {
 	return this->_executeGrade;
+}
+
+void Form::beSigned(const Bureaucrat &b) {
+	if (b.getGrade() > this->_signGrade)
+		throw Form::GradeTooLowException();
+	if (this->_signed)
+		throw Form::AlreadySignedException();
+	this->_signed = true;
+}
+
+void Form::execute(const Bureaucrat &b) const{
+	if (b.getGrade() > this->_executeGrade)
+		throw Form::GradeTooLowException();
+	if (!this->_signed)
+		throw Form::UnsignedException();
 }
 
 std::ostream &operator<<(std::ostream &o, const Form &rhs) {

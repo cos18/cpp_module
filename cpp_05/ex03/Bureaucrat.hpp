@@ -30,6 +30,7 @@ public:
 	void increaseGrade(void);
 	void decreaseGrade(void);
 	void signForm(Form &f);
+	void executeForm(Form &f);
 
 };
 
