@@ -1,6 +1,8 @@
 #ifndef ARRAY_H
 # define ARRAY_H
 
+# include <iostream>
+
 template<typename T>
 class Array {
 
@@ -23,6 +25,6 @@ public:
 	unsigned int size(void) const;
 };
 
-
+# include "Array.ipp"
 
 #endif
