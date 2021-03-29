@@ -1,7 +1,7 @@
-SRCS	= main.cpp Awesome.cpp
+SRCS	= main.cpp
 OBJS	= $(SRCS:.cpp=.o)
 
-NAME	= template
+NAME	= iter
 CC		= clang++
 CCFLAG	= -Wall -Wextra -Werror
 RM		= rm -f
