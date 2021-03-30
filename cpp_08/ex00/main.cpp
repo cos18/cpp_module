@@ -54,12 +54,4 @@ int main(void) {
 
 	std::cout << *easyfind(mset_put, 20) << std::endl;
 	std::cout << (easyfind(mset_put, 100) == mset_put.end() ? "END!" : "NOT END!") << std::endl;
-
-	std::cout << "\n\nmap\n\n";
-	std::map<int, int> map_put;
-	map_put.insert(std::pair<int, int>(10, 20));
-	map_put.insert(std::pair<int, int>(30, 40));
-	map_put.insert(std::pair<int, int>(50, 60));
-
-	std::cout << easyfind(map_put, 20)->second << std::endl;
 }
